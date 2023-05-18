@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,83 +9,65 @@
     {% load static %}
     <link rel="stylesheet" href="{% static 'form/style.css' %}" />
     {% load bootstrap5 %} {% bootstrap_css %} {% bootstrap_javascript %}
-  </head>
+</head>
 
-  <body>
-    <div class="centeredContainer">
-      <div class="top">
-        <h2>Paramètres du test</h2>
-      </div>
+<body>
+    <div class="centeredContainer d-flex d-md-flex w-100 h-100">
+        <div class=" w-75">
+            <div class="top">
+                <h2>Paramètres du test</h2>
+            </div>
 
-      <div class="bottom">
-        <h3>ENTREZ LES PARAMETRES DU TEST</h3>
-        <form method="POST" action="{%url 'validate_params'%}">
-          {% csrf_token %}
-          <input
-            type="text"
-            class="commonInput"
-            name="facteur1"
-            required
-            placeholder="Premier Facteur d'étude:"
-          /><br />
-          <input
-            type="text"
-            class="commonInput"
-            name="facteur2"
-            required
-            placeholder="Deuxième Facteur d'étude:"
-          /><br />
-          <input
-            type="number"
-            class="commonInput"
-            name="row_count"
-            required
-            placeholder="Nombre de lignes (r) :"
-          /><br />
-          <input
-            type="number"
-            name="col_count"
-            class="commonInput"
-            required
-            placeholder="Nombre de colonnes (c) :"
-          /><br />
-          <input
-            type="number"
-            name="replication_count"
-            class="commonInput"
-            required
-            placeholder="Nombre de réplications (n) :"
-          /><br />
-          <div class="form-group">
-            <label for="alpha">Seuil de signification :</label>
-            <select name="alpha" class="form-select">
-              <option value="0.05">5%</option>
-              <option value="0.025">2,5%</option>
-            </select>
-          </div>
+            <div class="bottom">
+                <h3>ENTREZ LES PARAMETRES DU TEST</h3>
+                <form method="POST" action="{%url 'validate_params'%}">
+                    {% csrf_token %}
+                    <input type="text" class="commonInput" name="facteur1" required
+                        placeholder="Premier Facteur d'étude:" /><br />
+                    <input type="text" class="commonInput" name="facteur2" required
+                        placeholder="Deuxième Facteur d'étude:" /><br />
+                    <input type="number" class="commonInput" name="row_count" required
+                        placeholder="Nombre de lignes (r) :" /><br />
+                    <input type="number" name="col_count" class="commonInput" required
+                        placeholder="Nombre de colonnes (c) :" /><br />
+                    <input type="number" name="replication_count" class="commonInput" required
+                        placeholder="Nombre de réplications (n) :" /><br />
+                    <div class="form-group">
+                        <label for="alpha">Seuil de signification :</label>
+                        <select name="alpha" class="form-select">
+                            <option value="0.05">5%</option>
+                            <option value="0.025">2,5%</option>
+                        </select>
+                    </div>
 
-          <br />
-          <br />
-          <div
-            class="container-sm bg-transparent shadow-lg text-danger text-xxl-center display-6 justify-content-center align-content-center align-items-center text-capitalize"
-          >
-            <p>{{ message }}</p>
-            <p>{{ e1 }}</p>
-            <p>{{ e2 }}</p>
-            <p>{{ e3 }}</p>
-            <p>{{ e4 }}</p>
-            <p>{{ e5 }}</p>
-            <p>{{ e6 }}</p>
-            <p>{{ e7 }}</p>
-            <p>{{ e8 }}</p>
-            <p>{{ e9 }}</p>
-          </div>
-          <br />
-          <br />
+                    <br />
+                    <br />
 
-          <button type="submit" class="proceed">SUIVANT</button>
-        </form>
-      </div>
+                    <br />
+                    <br />
+
+                    <button type="submit" class="proceed">SUIVANT</button>
+                </form>
+            </div>
+        </div>
+
+        <div
+            class="container-sm w-25 bg-transparent shadow-lg text-white text-xxl-center justify-content-center align-content-center align-items-center text-capitalize">
+            <h4>
+                <p>{{ message }}</p>
+                <p>{{ e1 }}</p>
+                <p>{{ e2 }}</p>
+                <p>{{ e3 }}</p>
+                <p>{{ e4 }}</p>
+                <p>{{ e5 }}</p>
+                <p>{{ e6 }}</p>
+                <p>{{ e7 }}</p>
+                <p>{{ e8 }}</p>
+                <p>{{ e9 }}</p>
+            </h4>
+
+        </div>
     </div>
-  </body>
+</body>
+
 </html>
