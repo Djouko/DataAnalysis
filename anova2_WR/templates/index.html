@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load static%}
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://jimmyjacobson.github.io/careerday/css/reveal.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://jimmyjacobson.github.io/careerday/css/theme/default.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://jimmyjacobson.github.io/careerday/lib/css/zenburn.css"
+    />
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+  </head>
+
+  <body>
+    <div class="reveal">
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+        <section>
+          <h1>Anova A Deux Facteurs Avec Replication</h1>
+          <p>
+            <small
+              >Made&nbsp;&nbsp;&nbsp;by&nbsp;&nbsp;&nbsp;<a
+                href="https://www.youtube.com/@devteammm3563"
+                >Dev Team MM</a
+              ></small
+            ><br /><br />
+            <a href="{% url 'index' %}" id="btn"><span>Demo</span></a>
+          </p>
+        </section>
+
+        <section>
+          <section>
+            <h1>Comprehension du concept</h1>
+            <h2>Définition</h2>
+            <p>
+              L’analyse de variance à deux facteurs, également connue sous le
+              nom de 2-WAY ANOVA (Analyis of Variance en anglais), est une
+              méthode statistique utilisée pour analyser les effets simultanées
+              deux facteurs sur une caractéristique quantitative mesurable.
+              2-WAY ANOVA avec réplication (encore appelé est 2-WAY ANOVA with
+              replication) est une extension à 2-WAY ANOVA dans laquelle chaque
+              combinaison de niveaux des deux facteurs est répliquée plusieurs
+              fois.
+            </p>
+            <!-- <img src="http://www.vectronicsappleworld.com/archives/vintage/images/0008/snap2.jpg"
+                        class="stretch" /> -->
+          </section>
+          <section>
+            <h1>Objectif</h1>
+            <p>
+              L’analyse de la variance à deux facteurs avec réplication a pour
+              objectif d’étudier l’influence de simultanée de deux facteurs sur
+              une caractéristique quantitative mesurable, tout en tenant compte
+              de la replication des mesures pour chaque combinaison des niveaux
+              des facteurs. Celle-ci peut donc nous aider à : • Quantifier
+              l’ampleur des effets de chaque facteurs et de déterminer s’ils
+              sont statistiquement significatifs. • Étudier si l’effet d’un
+              facteur sur une caractéristique quantitative mesurable dépend du
+              niveau de l’autre facteur. • Comprendre la variabilité due à la
+              réplication et déterminer si les différences observées entre les
+              niveaux des facteurs sont statistiquement significatives ou si
+              elles pourraient être dues au hasard.
+            </p>
+          </section>
+          <section>
+            <h2>Paramètre de 2 WAY ANOVA with replication</h2>
+            <p>
+              Pour effectuer l’analyse de la variance à deux facteurs avec
+              replication, les paramètres suffisants sont les suivants : • Le
+              seuil de signification, le plus souvent noté pour évaluer la
+              significativité statistique des résultats. • Les facteurs
+              d’études : qui représente les conditions, les traitements, ou les
+              catégories étudiées dans une expérience ou une étude. Nous devons
+              donc disposer de deux facteurs (facteur 1 et facteur 2) ayant
+              chacun au moins deux niveaux. Nous dénombrerons, le nombre de
+              niveau de chaque facteur, qui pourra sujet d’une grande étude en
+              fonction des résultats qu’on souhaite obtenir. La nombre de
+              réplication, qui représente les combinaisons des niveaux des deux
+              facteurs.
+            </p>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h1>A propos du site</h1>
+            <h2>Comment ca fonctionne ?</h2>
+          </section>
+          <section>
+            <h1>Saisir les parametres du test</h1>
+            <img src="{% static 'images/1.png' %}" class="stretch" />
+          </section>
+          <section>
+            <h1>Entrez les donnees du test</h1>
+            <img
+              src="{% static 'images/Screenshot from 2023-05-18 13-07-57.png' %}"
+              class="stretch"
+            />
+          </section>
+          <section>
+            <h1>Affichage des valeurs et interpretations du test</h1>
+            <img
+              src="{% static 'images/Screenshot from 2023-05-18 13-08-10.png' %}"
+              class="stretch"
+            />
+          </section>
+        </section>
+        {% comment %}
+        <section>
+          <section>
+            <h1>Team</h1>
+            <h2>Les generaux sans couronne</h2>
+          </section>
+        </section>
+        {% endcomment %}
+        <section>
+          <section>
+            <h1>Coordonnateur</h1>
+            <h2>Mr Lionel</h2>
+          </section>
+        </section>
+      </div>
+    </div>
+    <script src="https://jimmyjacobson.github.io/careerday/lib/js/head.min.js"></script>
+    <script src="https://jimmyjacobson.github.io/careerday/js/reveal.min.js"></script>
+    <script src="{% static 'script.js' %}"></script>
+  </body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/bootstrap.css" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Paramètres du test</title>
+  {% load bootstrap5 %} {% bootstrap_css %} {% bootstrap_javascript %}
+</head>
+
+
+<body class=" d-sm-flex d-lg-flex d-md-flex container-fluid container-md align-items-lg-center ">
+  <div class="container-sm m-auto  justify-content-lg-center text-capitalize text-truncate">
+    <h2 class="text-center display-2">Paramètres du test</h2>
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <form class="m-3 p-2" method="POST" action="{%url 'validate_params'%}">
+          {% csrf_token %}
+          <div class="form-group">
+            <label for="facteur1">Premier Facteur d'étude:</label>
+            <input type="text" name="facteur1" class="form-control" id="inputLignes"
+              placeholder="Entrez le nombre de lignes" />
+          </div>
+          <div class="form-group">
+            <label for="facteur2">Deuxième Facteur d'étude:</label>
+            <input type="text" name="facteur2" class="form-control" id="inputLignes"
+              placeholder="Entrez le nombre de lignes" required />
+          </div>
+
+          <div class="form-group">
+            <label for="row_count">Nombre de lignes (r) :</label>
+            <input type="number" name="row_count" class="form-control" id="inputLignes"
+              placeholder="Entrez le nombre de lignes" required />
+          </div>
+          <div class="form-group">
+            <label for="inputColonnes">Nombre de colonnes (c) :</label>
+            <input type="number" name="col_count" class="form-control" id="inputColonnes"
+              placeholder="Entrez le nombre de colonnes" />
+          </div>
+          <div class="form-group">
+            <label for="inputReplications">Nombre de réplications (n) :</label>
+            <input type="number" name="replication_count" class="form-control" id="inputReplications"
+              placeholder="Entrez le nombre de réplications" />
+          </div>
+
+          <div class="form-group">
+            <label for="alpha">Seuil de signification :</label>
+            <select name="alpha" class="form-select">
+
+              <option value="0.05">5%</option>
+              <option value="0.025">2,5%</option>
+            </select>
+
+          </div>
+          <div class="form-button text-center">
+            <button type="submit" class="btn btn-success btn-log  rounded mt-2 w-">
+              Suivant
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div
+    class="container-sm bg-transparent shadow-lg text-danger text-xxl-center display-6 justify-content-center align-content-center align-items-center text-capitalize">
+    <p>
+      {{ message }}
+    </p>
+    <p>
+      {{ e1 }}
+    </p>
+    <p>
+      {{ e2 }}
+    </p>
+    <p>
+      {{ e3 }}
+    </p>
+    <p>
+      {{ e4 }}
+    </p>
+    <p>
+      {{ e5 }}
+    </p>
+    <p>
+      {{ e6 }}
+    </p>
+    <p>
+      {{ e7 }}
+    </p>
+    <p>
+      {{ e8 }}
+    </p>
+    <p>
+      {{ e9 }}
+    </p>
+  </div>
+</body>
+
+</html>

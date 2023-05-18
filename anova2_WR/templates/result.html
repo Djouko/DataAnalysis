@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load bootstrap5 %} {% bootstrap_css %} {% bootstrap_javascript %}
+</head>
+
+<body class="container-sm" style="background-color : #bed2e2;">
+
+    <h2 class="text-center display-2">Valeur du test</h2>
+    <table class="border border-1 table border-secondary text-center">
+        <thead class="bg-primary">
+            <th class="bg-info text-dark">Source de Variation</th>
+            <th>Somme des carrés</th>
+            <th>ddl</th>
+            <th>Variance</th>
+            <th>Valeur du test</th>
+            <th>INRH0</th>
+            <th>Prise de Decision</th>
+        </thead>
+        <tbody>
+            <tr>
+                <th class="bg-dark text-white">Effet sur les colones</th>
+                <td>SSC = {{ calc_anova.SSC }}</td>
+                <td>C-1 = {{ cmoins }}</td>
+                <td>MSC = {{ calc_anova.MSC }}</td>
+                <td>Fc = {{ calc_anova.FC }}</td>
+                <td>[ 0 ; {{ calc_anova.crit_val_FR }}]</td>
+                <td>{{ calc_anova.accepted_FC_message }}</td>
+            </tr>
+            <tr>
+                <th class="bg-dark text-white">Effet sur les lignes</td>
+                <td>SSR = {{ calc_anova.SSR }}</td>
+                <td>R - 1 = {{ rmoins }}</td>
+                <td>MSR = {{ calc_anova.MSR }}</td>
+                <td>Fr = {{ calc_anova.FR }}</td>
+                <td>[ 0 ; {{ calc_anova.crit_val_FC }}]</td>
+                <td>{{ calc_anova.accepted_FR_message }}</td>
+            </tr>
+            <tr>
+                <th class="bg-dark text-white">Interaction</th>
+                <td>SS(RC) = {{ calc_anova.SSRC }}</td>
+                <td>(R-1)(C-1) = {{ rcmoins }}</td>
+                <td>MS(RC) = {{ calc_anova.MSRC }}</td>
+                <td>Frc = {{ calc_anova.FRC }}</td>
+                <td>[ 0 ; {{ calc_anova.crit_val_FRC }}]</td>
+                <td>{{ calc_anova.accepted_FRC_message }}</td>
+            </tr>
+            <tr>
+                <th class="bg-dark text-white">Erreur</th>
+                <td>SSE = {{ calc_anova.SSE }}</td>
+                <td>RC(N-1) = {{ rcnmoins }}</td>
+                <td>MSE = {{ calc_anova.MSE }}</td>
+            </tr>
+            <tr>
+                <th class="bg-dark text-white">Total</td>
+                <td>SST = {{ calc_anova.SST }}</td>
+                <td>RCN-1 = {{ rcnmoins1 }}</td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+   {% load bootstrap5 %} {% bootstrap_css %} {% bootstrap_javascript %}
+</head>
+
+<body class="container-md" style="background-color : #bed2e2;">
+  <div class="container-md">
+    <form class="container-sm shadow-lg  text-center justify-content-center " method="post"
+      action="{%url 'anova_values'%}">
+      {% csrf_token %}
+      <div class=" p-2 m-2 text-center align-content-center align-items-center">
+        <h1 class="text-center text-capitalize display-2 "> Saisie des donnees du test</h1>
+      </div>
+      <div class=" text-center align-content-center align-items-center">
+        <label for="row_count">Number of Rows: </label>
+        <input class=" m-1 " type="number" name="row_count" id="row_count" value={{ r }} disabled /><br />
+        <label for="column_count">Number of Columns: </label>
+        <input class=" m-1 " type="number" name="column_count" id="column_count" value={{ c }} 
+          disabled /><br />
+          <input value="{{ facteur2 }}" hidden/>
+          <input value="{{ facteur1}}" hidden/>
+          <input type ="text" value={{ alpha }} hidden/>
+        <label for="replication_count">Number of Replications: </label>
+        <input class=" m-1 " type="number" name="replication_count" id="replication_count" value={{ n }} 
+          disabled /><br />
+
+      </div>
+
+      <table class="table text-center justify-content-evenly border border-dark ">
+        <thead>
+          <tr>
+            <th class="text-center bg-primary" rowspan="2"> ...</th>
+            <th colspan="{{ cplus }}" class="text-center bg-success text-white">{{ facteur1 }}</th>
+
+          </tr>
+          <tr>
+            <th></th>
+            {% for j in column_count %}
+            <th class="text-xl-center">{{ fac1 }} {{ j }}</th>
+            {% endfor %}
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th rowspan="{{ rplus }}" class="text-center text-xl-center bg-dark text-white">
+              {{ facteur2 }}
+            </th>
+            {% for i in row_count %}
+          <tr class="border border-2">
+            <th class="text-xl-center ">{{ fac2 }}{{ i }}</th>
+            {% for j in column_count %}
+            <td class=" text-center text-lg-center">
+              {% for k in replication_count %}
+              <input class="col m-2 p-2 text-black border-1" type="number" name="X{{ i }}{{ j }}{{ k }}"
+                id="X{{ i }}{{ j }}{{ k }}" value="0" /> {% endfor %}
+            </td>
+            {% endfor %}
+          </tr>
+          {% endfor %}
+          </tr>
+        </tbody>
+      </table>
+
+      <input class="btn btn-primary text-xl-center  w-50 border-2" type="submit" value="Calculer" />
+    </form>
+  </div>
+  <div
+    class="container-sm shadow-lg text-danger text-xxl-center display-6 justify-content-center align-content-center align-items-center text-capitalize">
+    <p>
+      {{ message }}
+    </p>
+  </div>
+</body>
+
+</html>

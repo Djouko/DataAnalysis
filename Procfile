@@ -1,0 +1,1 @@
+web: gunicorn anova2_wr.wsgi --log-file -
